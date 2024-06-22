@@ -1,0 +1,12 @@
+Health Issue,"Feeling sudden intense warmth in face, neck, chest",Skin turning red or flushed,Sweating,Rapid heartbeat,Chills,Headaches,Dizziness,Weakness,Anxiety,Sleep disturbances,Episodes of intense sweating during sleep,Drenched in sweat upon waking,Skin feeling hot or clammy,Disrupted sleep patterns,Itching or burning sensation,Pain or discomfort during intercourse,Increased susceptibility to vaginal infections,Bleeding after intercourse,Decreased lubrication,Urinary frequency or urgency,Painful urination,Sudden emotional shifts,Irritability or frustration,Feeling sad or tearful,Difficulty concentrating,Increased stress,Anger or hostility,Reduced ability to learn new things,Forgetting where items are placed,Trouble concentrating on tasks,Difficulty multitasking,Reduced interest in sexual activity,Decreased sexual thoughts or fantasies,Less enjoyment or pleasure from sex,Reduced range of motion,Joint tenderness or soreness
+Hot Flashes,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Night Sweats,0,0,1,0,1,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Vaginal Dryness,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Mood Swings,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0
+Sleep Problems,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0
+Weight Gain,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Thinning Hair,0,1,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Dry Skin,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Memory Problems,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,1,1,0,0,0,0,0
+Decreased Libido,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0
+Joint Pain,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1
