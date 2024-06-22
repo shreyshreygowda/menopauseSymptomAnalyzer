@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Green Moon Cycle - Testimonials</title>
+    <title>Green Moon Cycle - Recommendations</title>
     <style>
-        /* General Styles */
+        /* CSS styles for customizing appearance */
         body {
             background-color: #F6F3F0; /* Light background color */
             color: #333; /* Dark text color */
@@ -14,7 +14,7 @@
             margin: 0;
             padding: 0;
         }
-        #testimonialsContainer {
+        #recommendationContainer {
             margin: 20px auto;
             width: 80%;
             max-width: 600px;
@@ -23,79 +23,99 @@
             border-radius: 10px;
             background-color: #EFEFEF; /* Lighter background for container */
         }
-        label, input, textarea {
+        label, select {
             display: block;
             margin: 10px auto;
             color: #333; /* Dark text color */
             font-size: 18px;
-            width: 100%;
-            max-width: 300px;
+        }
+        #lifestyle {
+            background-color: #cadbd7; /* Set background color of select */
+            color: black; /* Set text color of select */
+            border: none;
             padding: 10px;
             border-radius: 8px; /* Rounded corners */
-            border: none;
-            background-color: #cadbd7; /* Set background color */
+            width: 100%;
+            max-width: 300px;
         }
-        button {
-            display: block;
-            margin: 20px auto;
-            padding: 15px 30px;
-            font-size: 18px;
-            color: white;
-            background-color: #cadbd7;
-            border: none;
-            border-radius: 50px; /* Large rounded button */
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #aab7b3;
-        }
-        #testimonials {
+        #recommendations {
             margin-top: 20px;
             text-align: left;
-            background-color: #DFDFDF; /* Lighter background for testimonials */
+            background-color: #DFDFDF; /* Lighter background for recommendations */
             padding: 15px;
             border-radius: 8px;
         }
-        .testimonial {
-            background-color: #D7D7D7; /* Light background for testimonials */
-            margin: 10px 0;
-            padding: 15px;
-            border-radius: 8px;
+        h3 {
+            color: #333; /* Dark color for headings */
         }
-        .testimonial h4 {
-            margin: 0 0 10px;
-            color: #333;
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #D7D7D7; /* Slightly lighter background for list items */
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <div id="testimonialsContainer">
-        <h2>User Testimonials</h2>
-        <div id="testimonials">
-            <!-- User testimonials will be displayed here -->
+    <div id="recommendationContainer">
+        <label for="lifestyle">Select your lifestyle:</label>
+        <select id="lifestyle">
+            <option value="active">Active lifestyle</option>
+            <option value="eco-conscious">Eco-conscious lifestyle</option>
+            <option value="comfort">Comfort-focused lifestyle</option>
+            <!-- Add more options as needed -->
+        </select>
+    
+        <div id="recommendations">
+            <!-- Recommendations will be dynamically inserted here based on user selection -->
         </div>
-        <form id="testimonialForm">
-            <label for="userName">Your Name:</label>
-            <input type="text" id="userName" name="userName" required>
-            <label for="userTestimonial">Your Testimonial:</label>
-            <textarea id="userTestimonial" name="userTestimonial" required></textarea>
-            <button type="button" onclick="submitTestimonial()">Submit</button>
-        </form>
     </div>
-
+    
     <script>
-        function submitTestimonial() {
-            const userName = document.getElementById('userName').value;
-            const userTestimonial = document.getElementById('userTestimonial').value;
-
-            const testimonialElement = document.createElement('div');
-            testimonialElement.classList.add('testimonial');
-            testimonialElement.innerHTML = `<h4>${userName}</h4><p>${userTestimonial}</p>`;
-
-            document.getElementById('testimonials').appendChild(testimonialElement);
-
-            document.getElementById('testimonialForm').reset();
-        }
+        document.getElementById('lifestyle').addEventListener('change', function() {
+            var lifestyle = this.value;
+            var recommendations = '';
+        
+            switch (lifestyle) {
+                case 'active':
+                    recommendations = `
+                        <h3>Recommended for an active lifestyle:</h3>
+                        <ul>
+                            <li>Cotton pads with leak-proof technology</li>
+                            <li>Silicone cups for long-lasting comfort</li>
+                        </ul>
+                    `;
+                    break;
+                case 'eco-conscious':
+                    recommendations = `
+                        <h3>Recommended for an eco-conscious lifestyle:</h3>
+                        <ul>
+                            <li>Organic cotton pads</li>
+                            <li>Reusable silicone cups</li>
+                        </ul>
+                    `;
+                    break;
+                case 'comfort':
+                    recommendations = `
+                        <h3>Recommended for a comfort-focused lifestyle:</h3>
+                        <ul>
+                            <li>Ultra-soft cotton pads</li>
+                            <li>Seamless and breathable period underwear</li>
+                        </ul>
+                    `;
+                    break;
+                // Add more cases for other lifestyle options
+                default:
+                    recommendations = '<p>No recommendations available for this lifestyle.</p>';
+                    break;
+            }
+        
+            document.getElementById('recommendations').innerHTML = recommendations;
+        });
     </script>
 </body>
 </html>
