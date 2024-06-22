@@ -1,0 +1,57 @@
+<label for="lifestyle">Select your lifestyle:</label>
+<select id="lifestyle">
+    <option value="active">Active lifestyle</option>
+    <option value="eco-conscious">Eco-conscious lifestyle</option>
+    <option value="comfort">Comfort-focused lifestyle</option>
+    <!-- Add more options as needed -->
+</select>
+
+
+<div id="recommendations">
+    <!-- Recommendations will be dynamically inserted here based on user selection -->
+</div>
+
+
+<script>
+    document.getElementById('lifestyle').addEventListener('change', function() {
+        var lifestyle = this.value;
+        var recommendations = '';
+    
+        switch (lifestyle) {
+            case 'active':
+                recommendations = `
+                    <h3>Recommended for an active lifestyle:</h3>
+                    <ul>
+                        <li>Cotton pads with leak-proof technology</li>
+                        <li>Silicone cups for long-lasting comfort</li>
+                    </ul>
+                `;
+                break;
+            case 'eco-conscious':
+                recommendations = `
+                    <h3>Recommended for an eco-conscious lifestyle:</h3>
+                    <ul>
+                        <li>Organic cotton pads</li>
+                        <li>Reusable silicone cups</li>
+                    </ul>
+                `;
+                break;
+            case 'comfort':
+                recommendations = `
+                    <h3>Recommended for a comfort-focused lifestyle:</h3>
+                    <ul>
+                        <li>Ultra-soft cotton pads</li>
+                        <li>Seamless and breathable period underwear</li>
+                    </ul>
+                `;
+                break;
+            // Add more cases for other lifestyle options
+            default:
+                recommendations = '<p>No recommendations available for this lifestyle.</p>';
+                break;
+        }
+    
+        document.getElementById('recommendations').innerHTML = recommendations;
+    });
+    </script>
+    
