@@ -1,57 +1,121 @@
-<label for="lifestyle">Select your lifestyle:</label>
-<select id="lifestyle">
-    <option value="active">Active lifestyle</option>
-    <option value="eco-conscious">Eco-conscious lifestyle</option>
-    <option value="comfort">Comfort-focused lifestyle</option>
-    <!-- Add more options as needed -->
-</select>
-
-
-<div id="recommendations">
-    <!-- Recommendations will be dynamically inserted here based on user selection -->
-</div>
-
-
-<script>
-    document.getElementById('lifestyle').addEventListener('change', function() {
-        var lifestyle = this.value;
-        var recommendations = '';
-    
-        switch (lifestyle) {
-            case 'active':
-                recommendations = `
-                    <h3>Recommended for an active lifestyle:</h3>
-                    <ul>
-                        <li>Cotton pads with leak-proof technology</li>
-                        <li>Silicone cups for long-lasting comfort</li>
-                    </ul>
-                `;
-                break;
-            case 'eco-conscious':
-                recommendations = `
-                    <h3>Recommended for an eco-conscious lifestyle:</h3>
-                    <ul>
-                        <li>Organic cotton pads</li>
-                        <li>Reusable silicone cups</li>
-                    </ul>
-                `;
-                break;
-            case 'comfort':
-                recommendations = `
-                    <h3>Recommended for a comfort-focused lifestyle:</h3>
-                    <ul>
-                        <li>Ultra-soft cotton pads</li>
-                        <li>Seamless and breathable period underwear</li>
-                    </ul>
-                `;
-                break;
-            // Add more cases for other lifestyle options
-            default:
-                recommendations = '<p>No recommendations available for this lifestyle.</p>';
-                break;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Moon Cycle - Recommendations</title>
+    <style>
+        /* CSS styles for customizing appearance */
+        body {
+            background-color: #F6F3F0; /* Light background color */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center text */
+            margin: 0;
+            padding: 0;
         }
+        #recommendationContainer {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #cadbd7;
+            border-radius: 10px;
+            background-color: #EFEFEF; /* Lighter background for container */
+        }
+        label, select {
+            display: block;
+            margin: 10px auto;
+            color: #333; /* Dark text color */
+            font-size: 18px;
+        }
+        #lifestyle {
+            background-color: #cadbd7; /* Set background color of select */
+            color: black; /* Set text color of select */
+            border: none;
+            padding: 10px;
+            border-radius: 8px; /* Rounded corners */
+            width: 100%;
+            max-width: 300px;
+        }
+        #recommendations {
+            margin-top: 20px;
+            text-align: left;
+            background-color: #DFDFDF; /* Lighter background for recommendations */
+            padding: 15px;
+            border-radius: 8px;
+        }
+        h3 {
+            color: #333; /* Dark color for headings */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background-color: #D7D7D7; /* Slightly lighter background for list items */
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="recommendationContainer">
+        <label for="lifestyle">Select your lifestyle:</label>
+        <select id="lifestyle">
+            <option value="active">Active lifestyle</option>
+            <option value="eco-conscious">Eco-conscious lifestyle</option>
+            <option value="comfort">Comfort-focused lifestyle</option>
+            <!-- Add more options as needed -->
+        </select>
     
-        document.getElementById('recommendations').innerHTML = recommendations;
-    });
+        <div id="recommendations">
+            <!-- Recommendations will be dynamically inserted here based on user selection -->
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('lifestyle').addEventListener('change', function() {
+            var lifestyle = this.value;
+            var recommendations = '';
+        
+            switch (lifestyle) {
+                case 'active':
+                    recommendations = `
+                        <h3>Recommended for an active lifestyle:</h3>
+                        <ul>
+                            <li>Cotton pads with leak-proof technology</li>
+                            <li>Silicone cups for long-lasting comfort</li>
+                        </ul>
+                    `;
+                    break;
+                case 'eco-conscious':
+                    recommendations = `
+                        <h3>Recommended for an eco-conscious lifestyle:</h3>
+                        <ul>
+                            <li>Organic cotton pads</li>
+                            <li>Reusable silicone cups</li>
+                        </ul>
+                    `;
+                    break;
+                case 'comfort':
+                    recommendations = `
+                        <h3>Recommended for a comfort-focused lifestyle:</h3>
+                        <ul>
+                            <li>Ultra-soft cotton pads</li>
+                            <li>Seamless and breathable period underwear</li>
+                        </ul>
+                    `;
+                    break;
+                // Add more cases for other lifestyle options
+                default:
+                    recommendations = '<p>No recommendations available for this lifestyle.</p>';
+                    break;
+            }
+        
+            document.getElementById('recommendations').innerHTML = recommendations;
+        });
     </script>
-    
+</body>
+</html>
