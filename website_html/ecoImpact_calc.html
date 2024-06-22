@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Moon Cycle - Eco-Impact Calculator</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #F6F3F0; /* Light background color */
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif;
+            text-align: center; /* Center text */
+            margin: 0;
+            padding: 0;
+        }
+        #ecoImpactCalculator {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #cadbd7;
+            border-radius: 10px;
+            background-color: #EFEFEF; /* Lighter background for container */
+        }
+        label, input, button {
+            display: block;
+            margin: 10px auto;
+            color: #333; /* Dark text color */
+            font-size: 18px;
+            width: 100%;
+            max-width: 300px;
+            padding: 10px;
+            border-radius: 8px; /* Rounded corners */
+            border: none;
+            background-color: #cadbd7; /* Set background color */
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #cadbd7;
+            border: none;
+            border-radius: 50px; /* Large rounded button */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #aab7b3;
+        }
+        #ecoImpactResult {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #DFDFDF; /* Lighter background for result */
+            border-radius: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="ecoImpactCalculator">
+        <h2>Eco-Impact Calculator</h2>
+        <form id="impactForm">
+            <label for="periodsPerYear">Number of periods per year:</label>
+            <input type="number" id="periodsPerYear" name="periodsPerYear" min="1" required>
+            <label for="productsPerPeriod">Number of products used per period:</label>
+            <input type="number" id="productsPerPeriod" name="productsPerPeriod" min="1" required>
+            <button type="button" onclick="calculateEcoImpact()">Calculate Impact</button>
+        </form>
+        <div id="ecoImpactResult">
+            <!-- Results will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+    function calculateEcoImpact() {
+        const periodsPerYear = document.getElementById('periodsPerYear').value;
+        const productsPerPeriod = document.getElementById('productsPerPeriod').value;
+        const totalProducts = periodsPerYear * productsPerPeriod;
+        const wasteReduction = totalProducts * 0.1; // Assume 10% waste reduction per sustainable product
+        const result = `By switching to sustainable products, you could reduce waste by ${wasteReduction.toFixed(2)} kg per year!`;
+
+        document.getElementById('ecoImpactResult').innerHTML = result;
+    }
+    </script>
+</body>
+</html>
